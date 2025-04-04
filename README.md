@@ -37,12 +37,12 @@ word_game_prototype/
 
 #### Compile the game:
 ```bash
-gcc main.c -o word_game -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+gcc main.c -o main -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 ```
 
 #### Run the game:
 ```bash
-./word_game
+./main
 ```
 
 ---
