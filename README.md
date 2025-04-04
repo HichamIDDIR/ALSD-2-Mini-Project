@@ -92,11 +92,11 @@ gcc main.c -o main -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 ### Developed for:
 **Advanced Linux System Development (ALSD) Course**  
 **Computer Engineering Department**  
-**[Your University Name]**
+**University of Bejaia**
 
 ---
 
-## 🛠️ Prototype by **[Your Name]** - **[Semester/Year]**
+## 🛠️ Prototype by **Hicham IDDIR** - **[S2/2025]**
 
 ### 🛑 Report Issues
 If you encounter any bugs or errors, please open an issue on this repository or contact the developer.
