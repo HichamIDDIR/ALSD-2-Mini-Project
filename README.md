@@ -13,13 +13,15 @@ A basic word puzzle game prototype where players form valid words from given let
 
 ## 📦 Folder Structure
 ```plaintext
-word_game_prototype/
+mini_project/
 ├── main.c                # Main game code
-├── words.txt             # Dictionary word list (Note: Loading this file can take a long time)
+├── words.txt             # Dictionary word list
 ├── raygui.h              # UI library header
 ├── raylib.h              # Game library header
-├── libraylib.a           # Raylib static library
-└── README.md             # This file
+├── librarylib.a          # Raylib static library (note the different name)
+├── README.md             # Project documentation
+├── raygui-master/        # Raygui source directory
+└── raylib-5.5_linux_amd64/  # Raylib binaries directory
 ```
 
 ---
@@ -42,7 +44,7 @@ sudo dnf install gcc make libX11-devel
 
 #### Compile the game:
 ```bash
-gcc main.c -o main -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+gcc -o main main.c libraylib.a -lm -lpthread -ldl -lGL -lX11
 ```
 
 #### Run the game:
