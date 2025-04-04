@@ -88,6 +88,7 @@ gcc main.c -o main -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 - No license - for **ALSD 2** course use only.
 - The dictionary (`words.txt`) can be replaced with custom word lists.
 - All game assets are included in the repository.
+- **You can build the the project if you don't want to compile it alone, It's Ctrl + Shift + b in Vscode !!**
 
 ### Developed for:
 **Advanced Linux System Development (ALSD) Course**  
