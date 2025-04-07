@@ -2,6 +2,7 @@
 
 ## 📝 Description
 A basic word puzzle game prototype where players form valid words from given letters to progress through levels.
+**IF YOU ARE ON WINDOWS JUST RUN  THE .exe FILE**
 
 ### Core Mechanics:
 - 10 levels with increasing difficulty
