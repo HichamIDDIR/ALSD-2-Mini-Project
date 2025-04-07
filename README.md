@@ -4,7 +4,7 @@
 A basic word puzzle game prototype where players form valid words from given letters to progress through levels.
 
 
-**IF YOU ARE ON WINDOWS JUST RUN  THE .exe FILE**
+**IF YOU ARE ON WINDOWS JUST RUN  THE .exe FILE, OR THE .bat file to build and run.**
 
 ### Core Mechanics:
 - 10 levels with increasing difficulty
@@ -16,15 +16,31 @@ A basic word puzzle game prototype where players form valid words from given let
 
 ## 📦 Folder Structure
 ```plaintext
-mini_project/
-├── main.c                # Main game code
-├── words.txt             # Dictionary word list
-├── raygui.h              # UI library header
-├── raylib.h              # Game library header
-├── librarylib.a          # Raylib static library (note the different name)
-├── README.md             # Project documentation
-├── raygui-master/        # Raygui source directory
-└── raylib-5.5_linux_amd64/  # Raylib binaries directory
+LSD-2-Mini-Project-/
+├── linux/                          # Linux-specific files
+│   ├── .vscode/                    # VSCode configuration
+│   ├── raygui-master/              # Raygui source directory
+│   ├── raylib-5.5_linux_amd64/     # Raylib binaries directory
+│   ├── librarylib.a                # Raylib static library
+│   ├── main                        # Compiled Linux executable
+│   ├── main.c                      # Main game code
+│   ├── raygui.h                    # UI library header
+│   ├── raylib.h                    # Game library header
+│   └── words.txt                   # Dictionary word list
+├── Windows/                        # Windows-specific files
+│   ├── .vscode/                    # VSCode configuration
+│   ├── mingw64/                    # MinGW compiler for Windows
+│   ├── raygui-master/              # Raygui source directory
+│   ├── raylibol/                   # Raylib directory (likely a typo or custom name)
+│   ├── build.bat                   # Batch file to build and run the program
+│   ├── main.exe                    # Compiled Windows executable
+│   ├── main.c                      # Main game code
+│   ├── raygui.h                    # UI library header
+│   ├── raylib.h                    # Game library header
+│   └── words.txt                   # Dictionary word list
+├── .git/                           # Git repository data
+├── .gitignore                      # Git ignore file
+└── README.md                       # Project documentation
 ```
 
 ---
@@ -39,21 +55,30 @@ mini_project/
 ```bash
 sudo dnf install gcc make libX11-devel
 ```
+- in windows everything is portable
 
-### Build Instructions:
-#### Download required files:
-- [Raylib](https://www.raylib.com/)
-- [RayGUI](https://github.com/raysan5/raygui)
+
 
 #### Compile the game:
+##### For linux :
 ```bash
+cd ALSD-2-Mini-Project-\
 gcc -o main main.c libraylib.a -lm -lpthread -ldl -lGL -lX11
+```
+##### For windows : 
+```bash
+cd ALSD-2-Mini-Project-\
+mingw64\bin\gcc main.c -o main.exe -Irayliblol/include -Iraygui-master/src -Lrayliblol/lib -lraylib -lopengl32 -lgdi32 -lwinmm -static -std=c99 -mwindoclearws
 ```
 
 #### Run the game:
 ```bash
 ./main
 ```
+- If running it directly causes errors, compile it using the previous command or use the build.bat for windows : 
+  ```bash
+  .\build.bat
+  ```
 
 ---
 
@@ -80,7 +105,7 @@ gcc -o main main.c libraylib.a -lm -lpthread -ldl -lGL -lX11
 - No license - for **ALSD 2 (Algorithm et Structure des Données)** course use only.
 - The dictionary (`words.txt`) can be replaced with custom word lists.
 - All game assets are included in the repository.
-- **‼️ Build the project in VSCode by pressing Ctrl + Shift + B. ‼️**
+- **‼️ Build the project in VSCode by pressing Ctrl + Shift + B.‼️**
 
 ### Developed for:
 - Algorithm et Structure des Données (ALSD) Course
