@@ -17,30 +17,40 @@ A basic word puzzle game prototype where players form valid words from given let
 ## 📦 Folder Structure
 ```plaintext
 LSD-2-Mini-Project-/
-├── linux/                          # Linux-specific files
-│   ├── .vscode/                    # VSCode configuration
-│   ├── raygui-master/              # Raygui source directory
-│   ├── raylib-5.5_linux_amd64/     # Raylib binaries directory
-│   ├── librarylib.a                # Raylib static library
-│   ├── main                        # Compiled Linux executable
-│   ├── main.c                      # Main game code
-│   ├── raygui.h                    # UI library header
-│   ├── raylib.h                    # Game library header
-│   └── words.txt                   # Dictionary word list
-├── Windows/                        # Windows-specific files
-│   ├── .vscode/                    # VSCode configuration
-│   ├── mingw64/                    # MinGW compiler for Windows
-│   ├── raygui-master/              # Raygui source directory
-│   ├── raylibol/                   # Raylib directory (likely a typo or custom name)
-│   ├── build.bat                   # Batch file to build and run the program
-│   ├── main.exe                    # Compiled Windows executable
-│   ├── main.c                      # Main game code
-│   ├── raygui.h                    # UI library header
-│   ├── raylib.h                    # Game library header
-│   └── words.txt                   # Dictionary word list
-├── .git/                           # Git repository data
-├── .gitignore                      # Git ignore file
-└── README.md                       # Project documentation
+├── linux/                              # Linux-specific files
+│   ├── .vscode/                        # VSCode configuration
+│   ├── raygui-master/                  # Raygui source directory
+│   ├── raylib-5.5_linux_amd64/         # Raylib binaries directory
+│   ├── librarylib.a                    # Raylib static library
+│   ├── main                            # Compiled Linux executable
+│   ├── main.c                          # Main game code
+│   ├── raygui.h                        # UI library header
+│   ├── raylib.h                        # Game library header
+│   └── words.txt                       # Dictionary word list
+├── Windows/                            # Windows-specific files (updated)
+│   ├── compiler/                       # MinGW-w64 GCC 13.2.0 (from winlibs)
+│   │   └── bin/
+│   │       ├── gcc.exe                 # C compiler
+│   │       ├── g++.exe                 # C++ compiler (if needed)
+│   │       ├── ar.exe                  # Archiver
+│   │       └── libwinpthread-1.dll     # Required DLL
+│   │   └── ...                         # Other necessary files (lib/, include/, etc.)
+│   ├── include/                        # Raylib + RayGUI headers
+│   │   ├── raylib.h
+│   │   └── raygui.h
+│   ├── libs/                           # Static libraries
+│   │   └── libraylib.a
+│   ├── src/                            # Game source code
+│   │   └── main.c
+│   ├── words.txt                       # Dictionary file
+│   ├── game.exe                        # Compiled output
+│   ├── build.bat                       # One-click build script
+│   └── users/                          # Created at runtime
+│       └── *.dat                       # User save files
+├── .git/                               # Git repository data
+├── .gitignore                          # Git ignore file
+└── README.md                           # Project documentation
+
 ```
 
 ---
@@ -59,26 +69,18 @@ sudo dnf install gcc make libX11-devel
 
 
 
-#### Compile the game:
+#### Compile & Run the game:
 ##### For linux :
 ```bash
-cd ALSD-2-Mini-Project-\
-gcc -o main main.c libraylib.a -lm -lpthread -ldl -lGL -lX11
+cd ALSD-2-Mini-Project\
+gcc -o game main.c libraylib.a -lm -lpthread -ldl -lGL -lX11
+./game
 ```
 ##### For windows : 
-```bash
-cd ALSD-2-Mini-Project-\
-mingw64\bin\gcc main.c -o main.exe -Irayliblol/include -Iraygui-master/src -Lrayliblol/lib -lraylib -lopengl32 -lgdi32 -lwinmm -static -std=c99 -mwindoclearws
+```plaintext
+Just run the build.bat file.
 ```
 
-#### Run the game:
-```bash
-./main
-```
-- If running it directly causes errors, compile it using the previous command or use the build.bat for windows : 
-  ```bash
-  .\build.bat
-  ```
 
 ---
 
@@ -101,11 +103,10 @@ mingw64\bin\gcc main.c -o main.exe -Irayliblol/include -Iraygui-master/src -Lray
 ---
 
 ## 📌 Notes:
-- Prototype (v0.0.0) for educational purposes.
+- Prototype (v0.0.1) for educational purposes.
 - No license - for **ALSD 2 (Algorithm et Structure des Données)** course use only.
 - The dictionary (`words.txt`) can be replaced with custom word lists.
 - All game assets are included in the repository.
-- **‼️ Build the project in VSCode by pressing Ctrl + Shift + B.‼️**
 
 ### Developed for:
 - Algorithm et Structure des Données (ALSD) Course
