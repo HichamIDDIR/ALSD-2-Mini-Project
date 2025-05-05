@@ -1,0 +1,79 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build and Run main2.c (Step)",
+            "type": "shell",
+            "command": "${workspaceFolder}/compiler/bin/gcc.exe", // Path to your GCC compiler
+            "args": [
+                // --- Input File ---
+                "${workspaceFolder}/src/main2.c", // Compile main2.c
+
+                // --- Output File ---
+                "-o",
+                "${workspaceFolder}/game2.exe", // Output executable for main2.c
+
+                // --- Include Path ---
+                "-I${workspaceFolder}/include",
+
+                // --- Library Path ---
+                "-L${workspaceFolder}/libs",
+
+                // --- Libraries to Link ---
+                "-lraylib",
+                "-lopengl32",
+                "-lgdi32",
+                "-lwinmm",
+
+                // --- Compiler Flags (matching build.bat) ---
+                "-mwindows",
+                "-Wall",
+                "-std=c99",
+                "-Os",
+                "-s"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "dependsOn": "runMain2",
+            "group": "build" // It's still a build step
+        },
+        {
+            "label": "runMain2",
+            "type": "shell",
+            "command": ".\\game2.exe", // Run the compiled main2.c executable
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Build and Run main.c (using build.bat)",
+            "type": "shell",
+            "command": "${workspaceFolder}\\build.bat",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true // Keep your original build as the default
+            },
+            "detail": "Runs the build.bat script to compile and execute the original game."
+        }
+    ]
+}
