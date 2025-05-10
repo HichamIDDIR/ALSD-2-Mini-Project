@@ -30,8 +30,8 @@ MODLIBS=           $(LOCALMODLIBS) $(BASEMODLIBS)
 VERSION=	3.9
 srcdir=		..
 VPATH=		..
-abs_srcdir=	/R/winlibs_staging_ucrt64/cpython-mingw-3.9.7/cpython-mingw/build_win/..
-abs_builddir=	/R/winlibs_staging_ucrt64/cpython-mingw-3.9.7/cpython-mingw/build_win
+abs_srcdir=	/R/winlibs_staging_msvcrt64/cpython-mingw-3.9.7/cpython-mingw/build_win/..
+abs_builddir=	/R/winlibs_staging_msvcrt64/cpython-mingw-3.9.7/cpython-mingw/build_win
 
 
 CC=		x86_64-w64-mingw32-gcc
@@ -132,7 +132,7 @@ MULTIARCH=
 MULTIARCH_CPPFLAGS = 
 
 # Install prefix for architecture-independent files
-prefix=		R:/winlibs_staging_ucrt64/inst_cpython-mingw-3.9.7/share/python
+prefix=		R:/winlibs_staging_msvcrt64/inst_cpython-mingw-3.9.7/share/python
 
 # Install prefix for architecture-dependent files
 exec_prefix=	${prefix}
@@ -141,10 +141,10 @@ exec_prefix=	${prefix}
 datarootdir=    ${prefix}/share
 
 # Locations needed for semi-native fixup of sysconfig.
-srcdir_b2h=		R:/winlibs_staging_ucrt64/cpython-mingw-3.9.7/cpython-mingw
-VPATH_b2h=		R:/winlibs_staging_ucrt64/cpython-mingw-3.9.7/cpython-mingw
-abs_srcdir_b2h=		R:/winlibs_staging_ucrt64/cpython-mingw-3.9.7/cpython-mingw
-abs_builddir_b2h=	R:/winlibs_staging_ucrt64/cpython-mingw-3.9.7/cpython-mingw/build_win
+srcdir_b2h=		R:/winlibs_staging_msvcrt64/cpython-mingw-3.9.7/cpython-mingw
+VPATH_b2h=		R:/winlibs_staging_msvcrt64/cpython-mingw-3.9.7/cpython-mingw
+abs_srcdir_b2h=		R:/winlibs_staging_msvcrt64/cpython-mingw-3.9.7/cpython-mingw
+abs_builddir_b2h=	R:/winlibs_staging_msvcrt64/cpython-mingw-3.9.7/cpython-mingw/build_win
 prefix_b2h=		
 
 # Expanded directories
@@ -166,8 +166,8 @@ VENVLAUNCHERDIR=	$(BINLIBDEST)/venv/scripts/nt
 
 # Symbols used for using shared libraries
 SHLIB_SUFFIX=	.pyd
-EXT_SUFFIX=	.cp39-mingw_x86_64_ucrt.pyd
-PYD_PLATFORM_TAG = mingw_x86_64_ucrt
+EXT_SUFFIX=	.cp39-mingw_x86_64.pyd
+PYD_PLATFORM_TAG = mingw_x86_64
 LDSHARED=	$(CC) -shared -Wl,--enable-auto-image-base $(PY_LDFLAGS)
 BLDSHARED=	$(CC) -shared -Wl,--enable-auto-image-base $(PY_CORE_LDFLAGS)
 LDCXXSHARED=	$(CXX) -shared -Wl,--enable-auto-image-base
@@ -212,9 +212,9 @@ RUNSHARED=
 ENSUREPIP=      no
 
 # OpenSSL options for setup.py so sysconfig can pick up AC_SUBST() vars.
-OPENSSL_INCLUDES=-IC:/Prog/winlibs_staging_ucrt/custombuilt64/include
+OPENSSL_INCLUDES=-IC:/Prog/winlibs_staging_msvcrt/custombuilt64/include
 OPENSSL_LIBS=-lssl -lcrypto
-OPENSSL_LDFLAGS=-LC:/Prog/winlibs_staging_ucrt/custombuilt64/lib
+OPENSSL_LDFLAGS=-LC:/Prog/winlibs_staging_msvcrt/custombuilt64/lib
 
 # Default zoneinfo.TZPATH. Added here to expose it in sysconfig.get_config_var
 TZPATH=/usr/share/zoneinfo:/usr/lib/zoneinfo:/usr/share/lib/zoneinfo:/etc/zoneinfo
@@ -226,7 +226,7 @@ EXEMODE=	755
 FILEMODE=	644
 
 # configure script arguments
-CONFIG_ARGS=	 '--prefix=R:/winlibs_staging_ucrt64/inst_cpython-mingw-3.9.7/share/python' '--build=x86_64-w64-mingw32' '--host=x86_64-w64-mingw32' '--enable-shared' '--enable-optimizations' '--disable-ipv6' '--with-system-expat' '--with-system-ffi' '--with-system-libmpdec' '--without-ensurepip' '--without-c-locale-coercion' '--enable-loadable-sqlite-extensions' '--with-ssl-default-suites=openssl' 'CFLAGS=-D_POSIX -Wno-implicit-function-declaration -Wno-incompatible-pointer-types' 'build_alias=x86_64-w64-mingw32' 'host_alias=x86_64-w64-mingw32' 'PKG_CONFIG_PATH=/c/Prog/winlibs_staging_ucrt/custombuilt64/lib/pkgconfig:/c/Prog/winlibs_staging_ucrt/custombuilt64/share/pkgconfig'
+CONFIG_ARGS=	 '--prefix=R:/winlibs_staging_msvcrt64/inst_cpython-mingw-3.9.7/share/python' '--build=x86_64-w64-mingw32' '--host=x86_64-w64-mingw32' '--enable-shared' '--enable-optimizations' '--disable-ipv6' '--with-system-expat' '--with-system-ffi' '--with-system-libmpdec' '--without-ensurepip' '--without-c-locale-coercion' '--enable-loadable-sqlite-extensions' '--with-ssl-default-suites=openssl' 'CFLAGS=-D_POSIX -Wno-implicit-function-declaration -Wno-incompatible-pointer-types' 'build_alias=x86_64-w64-mingw32' 'host_alias=x86_64-w64-mingw32' 'PKG_CONFIG_PATH=/c/Prog/winlibs_staging_msvcrt/custombuilt64/lib/pkgconfig:/c/Prog/winlibs_staging_msvcrt/custombuilt64/share/pkgconfig'
 
 
 # Subdirectories with code
@@ -327,8 +327,8 @@ IO_OBJS=	\
 
 ##########################################################################
 
-LIBFFI_INCLUDEDIR=	C:/Prog/winlibs_staging_ucrt/custombuilt64/include
-NCURSESW_INCLUDEDIR=	C:/Prog/winlibs_staging_ucrt/custombuilt64/include/ncursesw -IC:/Prog/winlibs_staging_ucrt/custombuilt64/lib/pkgconfig/../../include
+LIBFFI_INCLUDEDIR=	C:/Prog/winlibs_staging_msvcrt/custombuilt64/include
+NCURSESW_INCLUDEDIR=	C:/Prog/winlibs_staging_msvcrt/custombuilt64/include/ncursesw -IC:/Prog/winlibs_staging_msvcrt/custombuilt64/lib/pkgconfig/../../include
 
 ##########################################################################
 # Parser

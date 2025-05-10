@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "test.C": "cpp",
+        "*.def": "c",
+        "direct.h": "c",
+        "main3.C": "cpp"
+    }
+}
