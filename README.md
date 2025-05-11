@@ -16,18 +16,7 @@ A basic word puzzle game prototype where players form valid words from given let
 
 ## 📦 Folder Structure
 ```plaintext
-LSD-2-Mini-Project-/
-├── linux/                              # Linux-specific files
-│   ├── .vscode/                        # VSCode configuration
-│   ├── raygui-master/                  # Raygui source directory
-│   ├── raylib-5.5_linux_amd64/         # Raylib binaries directory
-│   ├── librarylib.a                    # Raylib static library
-│   ├── main                            # Compiled Linux executable
-│   ├── main.c                          # Main game code
-│   ├── raygui.h                        # UI library header
-│   ├── raylib.h                        # Game library header
-│   └── words.txt                       # Dictionary word list
-├── Windows/                            # Windows-specific files (updated)
+LSD-2-Mini-Project-/                           # Windows-specific files (updated)
 │   ├── compiler/                       # MinGW-w64 GCC 13.2.0 (from winlibs)
 │   │   └── bin/
 │   │       ├── gcc.exe                 # C compiler
@@ -56,26 +45,11 @@ LSD-2-Mini-Project-/
 ---
 
 ## ⚙️ Installation & Setup
-
-### Prerequisites:
-- Linux system (tested on Fedora)
-- Basic build tools: `gcc`, `make`
-- X11 development libraries  
-  _Install required packages (Fedora):_
-```bash
-sudo dnf install gcc make libX11-devel
-```
 - in windows everything is portable
 
 
 
 #### Compile & Run the game:
-##### For linux :
-```bash
-cd ALSD-2-Mini-Project\
-gcc -o game main.c libraylib.a -lm -lpthread -ldl -lGL -lX11
-./game
-```
 ##### For windows : 
 ```plaintext
 Just run the build.bat file.
