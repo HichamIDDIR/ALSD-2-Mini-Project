@@ -1,0 +1,3 @@
+C:/Users/DELL/Desktop/ALSD-2-Mini-Project/build/CMakeFiles/game.exe.dir
+C:/Users/DELL/Desktop/ALSD-2-Mini-Project/build/CMakeFiles/edit_cache.dir
+C:/Users/DELL/Desktop/ALSD-2-Mini-Project/build/CMakeFiles/rebuild_cache.dir

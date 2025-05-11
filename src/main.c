@@ -444,12 +444,14 @@ void ChargerDonneesNiveau(int niveau)
         return;
     }
 
+    // Réinitialiser les données du niveau courant
     memset(&niveauCourant, 0, sizeof(Niveau));
     compteMots = 0;
     memset(motsSaisis, 0, sizeof(motsSaisis));
     memset(texteSaisi, 0, sizeof(texteSaisi));
-    // message[0] = '\0'; // Clear message on level change if desired
+    // message[0] = '\0'; // Effacer le message lors du changement de niveau si nécessaire
 
+    // Charger les données spécifiques selon le numéro du niveau
     switch (niveau)
     {
     case 1:
@@ -482,13 +484,14 @@ void ChargerDonneesNiveau(int niveau)
     case 10:
         Niveau_10();
         break;
-    default: // Should ideally not happen if NIVEAU_MAX is respected
+    default: // Ne devrait pas arriver si NIVEAU_MAX est bien respecté
         TraceLog(LOG_WARNING, "Niveau invalide: %d. Chargement du niveau 1.", niveau);
         Niveau_1();
-        niveau = 1; // Ensure a valid state
+        niveau = 1; // Forcer un état valide
         break;
     }
 
+    // Enregistrer le niveau actuel dans la structure
     niveauCourant.niveau = niveau;
 }
 
@@ -889,8 +892,8 @@ void DessinerEcranJeuTermine()
 // =================================================================================================
 void Niveau_1()
 {
-    // Copie la chaîne de caractères "TEASRN" dans le tableau caracteres du niveau courant.
-    strcpy(niveauCourant.caracteres, "TEASRN");
+    // Copie la chaîne de caractères "EARSTN" dans le tableau caracteres du niveau courant.
+    strcpy(niveauCourant.caracteres, "EARSTN");
     // Définit le nombre de mots requis pour ce niveau à 3.
     niveauCourant.nombreMotsRequises = 3;
     // Définit la longueur du premier mot requis à 3.
@@ -901,7 +904,7 @@ void Niveau_1()
 }
 void Niveau_2()
 {
-    strcpy(niveauCourant.caracteres, "CATERS");
+    strcpy(niveauCourant.caracteres, "LAPRES");
     niveauCourant.nombreMotsRequises = 3;
     niveauCourant.longueursMotsRequises[0] = 4;
     niveauCourant.longueursMotsRequises[1] = 5;
@@ -909,7 +912,7 @@ void Niveau_2()
 
 void Niveau_3()
 {
-    strcpy(niveauCourant.caracteres, "PLANES");
+    strcpy(niveauCourant.caracteres, "DOLENT");
     niveauCourant.nombreMotsRequises = 4;
     niveauCourant.longueursMotsRequises[0] = 4;
     niveauCourant.longueursMotsRequises[1] = 5;
@@ -918,7 +921,7 @@ void Niveau_3()
 
 void Niveau_4()
 {
-    strcpy(niveauCourant.caracteres, "BRINGE");
+    strcpy(niveauCourant.caracteres, "CHAMPS");
     niveauCourant.nombreMotsRequises = 4;
     niveauCourant.longueursMotsRequises[0] = 4;
     niveauCourant.longueursMotsRequises[1] = 5;
@@ -927,7 +930,7 @@ void Niveau_4()
 
 void Niveau_5()
 {
-    strcpy(niveauCourant.caracteres, "DEMANSI");
+    strcpy(niveauCourant.caracteres, "QUENCHI");
     niveauCourant.nombreMotsRequises = 4;
     niveauCourant.longueursMotsRequises[0] = 5;
     niveauCourant.longueursMotsRequises[1] = 6;
@@ -935,7 +938,7 @@ void Niveau_5()
 
 void Niveau_6()
 {
-    strcpy(niveauCourant.caracteres, "VIOLETS");
+    strcpy(niveauCourant.caracteres, "FLEURIT");
     niveauCourant.nombreMotsRequises = 5;
     niveauCourant.longueursMotsRequises[0] = 4;
     niveauCourant.longueursMotsRequises[1] = 5;
@@ -944,7 +947,7 @@ void Niveau_6()
 
 void Niveau_7()
 {
-    strcpy(niveauCourant.caracteres, "CHANTES");
+    strcpy(niveauCourant.caracteres, "TEGRAVI");
     niveauCourant.nombreMotsRequises = 5;
     niveauCourant.longueursMotsRequises[0] = 5;
     niveauCourant.longueursMotsRequises[1] = 6;
@@ -952,7 +955,7 @@ void Niveau_7()
 
 void Niveau_8()
 {
-    strcpy(niveauCourant.caracteres, "RESCUED");
+    strcpy(niveauCourant.caracteres, "VBRAINT");
     niveauCourant.nombreMotsRequises = 5;
     niveauCourant.longueursMotsRequises[0] = 5;
     niveauCourant.longueursMotsRequises[1] = 6;
@@ -960,7 +963,7 @@ void Niveau_8()
 
 void Niveau_9()
 {
-    strcpy(niveauCourant.caracteres, "TRAINES");
+    strcpy(niveauCourant.caracteres, "CREAFTI");
     niveauCourant.nombreMotsRequises = 6;
     niveauCourant.longueursMotsRequises[0] = 5;
     niveauCourant.longueursMotsRequises[1] = 6;
@@ -968,7 +971,7 @@ void Niveau_9()
 
 void Niveau_10()
 {
-    strcpy(niveauCourant.caracteres, "ASSIETTE");
+    strcpy(niveauCourant.caracteres, "ÉCLATANT");
     niveauCourant.nombreMotsRequises = 7;
     niveauCourant.longueursMotsRequises[0] = 5;
     niveauCourant.longueursMotsRequises[1] = 6;
