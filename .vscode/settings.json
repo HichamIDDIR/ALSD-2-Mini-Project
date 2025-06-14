@@ -4,5 +4,6 @@
         "*.def": "c",
         "direct.h": "c",
         "main3.C": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }

@@ -9,7 +9,6 @@ link_directories(libs)
 
 file(GLOB SOURCES src/*.c)
 
-add_executable(game ${SOURCES})
+add_executable(game.exe ${SOURCES})
 
 target_link_libraries(game.exe raylib opengl32 gdi32 winmm)
-

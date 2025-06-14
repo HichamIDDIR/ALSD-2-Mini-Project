@@ -1,3 +1,12 @@
 # ninja log v6
+82	2512	7686825477731746	CMakeFiles/game.dir/src/main.c.obj	10890061c4b866a8
+80	614	7686825810937486	build.ninja	7a4430e8f1abb97b
 8	2808	7686820897263286	CMakeFiles/game.exe.dir/src/main.c.obj	f21c28720782bfce
 2823	3619	7686820925399115	game.exe.exe	db7fb085cc1cf6d8
+54	408	7686825810937486	build.ninja	7a4430e8f1abb97b
+185	1244	7692214763164034	CMakeFiles/game.exe.dir/src/main.c.obj	f21c28720782bfce
+1247	1972	7692214773930072	game.exe.exe	db7fb085cc1cf6d8
+118	860	7692215770153797	CMakeFiles/game.exe.dir/src/main.c.obj	f21c28720782bfce
+865	1299	7692215777671929	game.exe.exe	db7fb085cc1cf6d8
+8	480	7692216127309568	CMakeFiles/game.exe.dir/src/main.c.obj	f21c28720782bfce
+489	749	7692216132118476	game.exe.exe	db7fb085cc1cf6d8
